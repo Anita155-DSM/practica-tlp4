@@ -53,7 +53,6 @@ console.log(paqueteNac)
 const paqueteInt = new PaqueteInternacional("PKG002").calcularCosto(3)
 console.log(paqueteInt)
 
-const paquetesDeposito = new Deposito().cantidad()
 
 // salida esperada:
 
