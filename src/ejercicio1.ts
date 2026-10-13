@@ -1,4 +1,4 @@
-//un deposito registra paquetes y calcula el costo de envio segun el peso
+z//un deposito registra paquetes y calcula el costo de envio segun el peso
 
 abstract class Paquete {
     readonly codigo: string;
@@ -25,23 +25,23 @@ class PaqueteInternacional extends Paquete{
 }
 
 class Deposito {
-    paquete: Paquete [] = []
-    constructor(paquete: Paquete[]){
-        this.paquete = paquete
-    }
+    private paquete: Paquete [] = [] //propiedad que comienza vacio
+    // constructor(paquete: Paquete[]){  //no necesita constructor porque no necesita 
+    //     this.paquete = paquete        //recibir nada ya que empieza vacío y lo vamos agregando 
+    // }  
 
     registrar(paquete: Paquete): void{
         this.paquete.push(paquete)
-        console.log(paquete)
+        // console.log(paquete) //NO LLEVA CONSOLE.LOG PORQUE EL CONSOLE.LOG DEVUELVE EL OBJETO.
     }
     
-    public get cantidad(): string {
-        return `Paquetes en deposito: ${this.paquete}`
+    public get cantidad(): number {
+        return this.paquete.length
     }
     
     mostrarCostos(peso: number): void {
         this.paquete.forEach( p => {
-        console.log("Paquetes en deposito:", this.paquete)
+        console.log(`${p.codigo} cuesta: ${p.calcularCosto(peso)}`)
         })
     }
 }
