@@ -1,7 +1,6 @@
 # Practica TLP4
 
-Ejercicios de programacion orientada a objetos y patrones de diseno
-implementados en TypeScript.
+Ejercicios de programacion orientada a objetos y patrones de diseno implementados en TypeScript.
 
 ## Indice
 
@@ -20,14 +19,13 @@ Un deposito registra paquetes y calcula el costo de envio segun el peso.
 #### `Paquete`
 
 - Clase abstracta.
-- Propiedad `codigo: string` de solo lectura (`readonly`), recibida por
-  constructor.
+- Propiedad `codigo: string` de solo lectura (`readonly`), recibida por constructor.
 - Metodo abstracto `calcularCosto(peso: number): number`.
 
 #### Tipos de paquete
 
 | Clase | Costo por kilogramo |
-| --- | ---: |
+| --- | --- |
 | `PaqueteNacional` | `$300` |
 | `PaqueteInternacional` | `$800` |
 
@@ -35,11 +33,9 @@ Un deposito registra paquetes y calcula el costo de envio segun el peso.
 
 - Mantiene un arreglo privado de `Paquete`.
 - Expone `registrar(paquete: Paquete): void`.
-- Incluye un atributo estatico que cuenta el total historico de paquetes
-  registrados.
+- Incluye un atributo estatico que cuenta el total historico de paquetes registrados.stas
 - Expone el getter `cantidad`.
-- Implementa `mostrarCostos(peso: number): void`, recorriendo el arreglo sin
-  comprobar el tipo concreto del paquete mediante `if`.
+- Implementa `mostrarCostos(peso: number): void`, recorriendo el arreglo sin comprobar el tipo concreto del paquete mediante `if`.
 
 ### Salida esperada
 
@@ -85,14 +81,14 @@ interface Entrada {
 #### `FabricaEntradas`
 
 - Implementa el patron **Factory**.
+
 - Expone el metodo estatico:
 
   ```typescript
   crear(tipo: "general" | "vip"): Entrada
   ```
 
-- Fuera de la fabrica, no se debe instanciar directamente ninguna de las
-  clases concretas.
+- Fuera de la fabrica, no se debe instanciar directamente ninguna de las clases concretas.
 
 ### Salida esperada
 
@@ -152,18 +148,15 @@ Implementar una clase por cada opcion:
 | `Basico` | `monto * 1.10` |
 | `Premium` | `monto * 1.21` |
 
-`CalculadoraImpuestos.calcular` debe recibir una instancia de `Categoria` y
-resolver el calculo sin utilizar un `if` por categoria.
+`CalculadoraImpuestos.calcular` debe recibir una instancia de `Categoria` y resolver el calculo sin utilizar un `if` por categoria.
 
 #### Principio DIP
 
-`CalculadoraImpuestos` no debe crear `LoggerConsola` internamente. En su lugar,
-debe recibir por constructor una dependencia basada en la interfaz `Logger`.
+`CalculadoraImpuestos` no debe crear `LoggerConsola` internamente. En su lugar, debe recibir por constructor una dependencia basada en la interfaz `Logger`.
 
 Implementar dos alternativas:
 
 - `LoggerConsola`.
 - `LoggerArchivo`.
 
-De esta forma, la calculadora depende de una abstraccion y no de una
-implementacion concreta.
+De esta forma, la calculadora depende de una abstraccion y no de una implementacion concreta.
